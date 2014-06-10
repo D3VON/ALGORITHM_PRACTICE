@@ -6,11 +6,14 @@ TODO: should implement with vector
 */
 
 #include <iostream>
+#include <vector>
+#include <assert.h>
  
 using namespace std;
 // Main function for the program
 int main( )
 {
+	/********************************simple array example************************/
 	int a[] = {3,10,0,16,33};
 	int asize = sizeof(a)/sizeof(a[0]);
 	
@@ -23,13 +26,13 @@ int main( )
 	int newsize = asize + bsize + csize;
 	int d[newsize];
 	
-	int i;
+	unsigned int i;
 	for(i = 0; i<asize; i++){
 		d[i] = a[i];
 		cout << a[i] << ",";	
 	}
 	cout << "\n";	
-	int x = i;
+	unsigned int x = i;
 	for(i = 0; i<bsize; i++){
 		d[x++] = b[i];
 		cout << b[i] << ",";	
@@ -44,6 +47,26 @@ int main( )
 		cout << d[i] << ",";	
 	}
 	cout << "\n";
+	
+	/*******************************STL vector example**************************/
+		
+	vector<int> V;
+	V.insert(V.begin(), 3);
+	assert(V.size() == 1 && V.capacity() >= 1 && V[0] == 3);
+	
+	vector<int> first;                                // empty vector of ints
+	vector<int> second (4,100);                       // four ints with value 100
+	vector<int> third (second.begin(),second.end());  // iterating through second
+	vector<int> fourth (third);                       // a copy of third
+
+	// the iterator constructor can also be used to construct from arrays:
+	int myints[] = {16,2,77,29};
+	vector<int> fifth (myints, myints + sizeof(myints) / sizeof(int) );
+
+	cout << "The contents of fifth are:";
+	for (vector<int>::iterator it = fifth.begin(); it != fifth.end(); ++it)
+	cout << ' ' << *it;
+	cout << '\n';
 	
 
 	
