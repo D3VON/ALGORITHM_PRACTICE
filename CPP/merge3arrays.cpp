@@ -68,6 +68,10 @@ int main( )
 	cout << ' ' << *it;
 	cout << '\n';
 	
+	cout << "woof!" << endl;
+	cout << "woof!" << endl;
+	cout << "woof!" << endl;
+	cout << "woof! and Meow!" << endl;
 
 	
    return 0;
