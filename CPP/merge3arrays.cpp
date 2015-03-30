@@ -54,17 +54,17 @@ int main( )
 	V.insert(V.begin(), 3);
 	assert(V.size() == 1 && V.capacity() >= 1 && V[0] == 3);
 	
-	vector<int> first;                                // empty vector of ints
-	vector<int> second (4,100);                       // four ints with value 100
-	vector<int> third (second.begin(),second.end());  // iterating through second
-	vector<int> fourth (third);                       // a copy of third
+	vector<int> firstVect;                                // empty vector of ints
+	vector<int> secondVect (4,100);                       // four ints with value 100
+	vector<int> thirdVect (secondVect.begin(),secondVect.end());  // iterating through second
+	vector<int> fourthVect (thirdVect);                       // a copy of third
 
 	// the iterator constructor can also be used to construct from arrays:
 	int myints[] = {16,2,77,29};
-	vector<int> fifth (myints, myints + sizeof(myints) / sizeof(int) );
+	vector<int> fifthVect (myints, myints + sizeof(myints) / sizeof(int) );
 
-	cout << "The contents of fifth are:";
-	for (vector<int>::iterator it = fifth.begin(); it != fifth.end(); ++it)
+	cout << "The contents of fifthVect are:";
+	for (vector<int>::iterator it = fifthVect.begin(); it != fifthVect.end(); ++it)
 	cout << ' ' << *it;
 	cout << '\n';
 	
@@ -72,7 +72,7 @@ int main( )
 	cout << "woof!" << endl;
 	cout << "woof!" << endl;
 	cout << "woof! and Meow!" << endl;
-
+        cout << "I don't know why I have all these couts here..." << endl;
 	
    return 0;
 }
